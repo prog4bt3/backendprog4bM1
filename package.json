@@ -12,7 +12,7 @@
     "watch-ts": "tsc -w"
   },
   "keywords": [],
-  "author": "Prog6bT1",
+  "author": "Alumnos de Prog4bt3",
   "license": "GNU",
   "dependencies": {
     "body-parser": "^1.20.3",
