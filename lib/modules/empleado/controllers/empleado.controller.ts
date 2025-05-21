@@ -5,8 +5,13 @@ import { exec } from 'child_process';
 
 export class EmpleadoController {
     crearEmpleado = (req: Request, res: Response) => {
+        console.log('body-->', req.body);
         const nuevaEmpleado = new Empleado({
-            empleado: req.body.empleado
+            sueldo: Number(req.body.sueldo),
+            nombre: req.body.nombre,
+            horario: req.body.horario,
+            cargo: req.body.cargo
+
         });
 
         nuevaEmpleado.save()
@@ -46,7 +51,10 @@ export class EmpleadoController {
 
     actualizarEmpleado = (req: Request, res: Response) => {
         Empleado.findByIdAndUpdate(req.params.id,{
-            empleado: req.body.empleado
+            sueldo: req.body.sueldo,
+            nombre: req.body.nombre,
+            horario: req.body.horario,
+            cargo: req.body.cargo
         })
         .exec()
         .then(empleadoActualizada => {
